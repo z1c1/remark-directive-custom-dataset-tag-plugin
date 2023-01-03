@@ -1,6 +1,6 @@
 {
   "name": "@z1c1/remark-directive-custom-dataset-tag-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A remark plugin which helps create a custom html tag with specified dataset. This works together with `remark-directive`.",
   "keywords": [],
   "homepage": "https://github.com/z1c1/remark-directive-custom-dataset-tag-plugin",
