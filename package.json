@@ -1,0 +1,65 @@
+{
+  "name": "@z1c1/remark-directive-custom-dataset-tag-plugin",
+  "version": "0.1.0",
+  "description": "A remark plugin which helps create a custom html tag with specified dataset. This works together with `remark-directive`.",
+  "keywords": [],
+  "homepage": "https://github.com/z1c1/remark-directive-custom-dataset-tag-plugin",
+  "bugs": {
+    "url": "https://github.com/z1c1/remark-directive-custom-dataset-tag-plugin/#issues"
+  },
+  "repository": {
+    "type": "git+https",
+    "url": "git@github.com:z1c1/remark-directive-custom-dataset-tag-plugin.git"
+  },
+  "license": "MIT",
+  "author": "John Chan",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "bin": {},
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "rollup -c",
+    "clean": "rimraf dist",
+    "prepare": "npm run build",
+    "push": "git push && git push origin --tags",
+    "release": "standard-version && npm publish --access public",
+    "postrelease": "npm run push",
+    "release:alpha": "standard-version --prerelease alpha && npm publish --access public --tag next",
+    "postrelease:alpha": "npm run push",
+    "release:beta": "standard-version --prerelease beta && npm publish --access public --tag next",
+    "postrelease:beta": "npm run push",
+    "release:first": "standard-version --first-release && npm publish --access public",
+    "postrelease:first": "git push -u origin master && git push origin --tags",
+    "release:major": "standard-version --release-as major && npm publish --access public",
+    "postrelease:major": "npm run push",
+    "release:minor": "standard-version --release-as minor && npm publish --access public",
+    "postrelease:minor": "npm run push",
+    "release:pre": "npm run release:alpha",
+    "start": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "unist-util-visit": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@rollup/plugin-babel": "^5.3.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.45.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "standard-version": "^9.1.1"
+  },
+  "peerDependencies": {
+    "unist-util-visit": "^4.1.1"
+  },
+  "engines": {
+    "node": ">=12",
+    "npm": ">=6"
+  }
+}
